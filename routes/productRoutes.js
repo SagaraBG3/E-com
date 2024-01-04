@@ -72,6 +72,11 @@ router.get("/product-category/:slug", productCategoryController);
 router.get("/related-product/:pid/:cid", realtedProductController);
 
 
+//category wise product
+router.get("/product-category/:slug", productCategoryController);
+
+
+
 
 
 export default router;
