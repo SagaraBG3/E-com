@@ -12,6 +12,9 @@ import {
   realtedProductController,
   searchProductController,
   productCategoryController,
+  brainTreePaymentController,
+  braintreeTokenController,
+
   
 } from "../controllers/productController.js";
 import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
@@ -74,6 +77,14 @@ router.get("/related-product/:pid/:cid", realtedProductController);
 
 //category wise product
 router.get("/product-category/:slug", productCategoryController);
+
+//payments routes
+//token
+router.get("/braintree/token", braintreeTokenController);
+
+//payments
+router.post("/braintree/payment", requireSignIn, brainTreePaymentController);
+
 
 
 
